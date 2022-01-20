@@ -5,7 +5,7 @@ import json
 
 # É claro que o conteúdo seria capturado por um leirtor de QRcode
 # e não importado de um JSON mas sua converção ajudaria muito.
-arquivo = open('dados_produto.json', 'r')
+arquivo = open('statics/dados_produto.json', 'r')
 conteudo = arquivo.read()
 arquivo.close()
 

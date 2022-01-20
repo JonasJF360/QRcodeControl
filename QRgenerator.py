@@ -13,10 +13,10 @@ import json
 
 # Esse texto pode receber um set do sistema para gerar uma imágem nova
 codigo_produto = 'LAT335699'
-descricao = 'LEITE CONDENCADO'
+descricao = 'LACTOFUR 50ML'
 lote = '2021-AX325-07'
-data_fabricacao = '12/07/2021'
-data_vencimento = '12/07/2023'
+data_fabricacao = '19/01/2022'
+data_vencimento = '15/08/2023'
 
 conteudo = {
     'CodProd': codigo_produto,
@@ -28,14 +28,14 @@ conteudo = {
 
 conteudo_convertido = json.dumps(conteudo)
 
-""" arquivo = open('dados_produto.json', 'w')
+arquivo = open('statics/dados_produto.json', 'w')
 arquivo.write(conteudo_convertido)
-arquivo.close() """
+arquivo.close()
 
 img = qrcode.make(conteudo_convertido)
 
 type(img)  # qrcode.image.pil.PilImage
-img.save("some_file.png")
+img.save("statics/some_file.png")
 
 # A saida será uma imágem png cujo conteúdo será:
 # {Lote: "2021-AX325-07", DataFabr: "12/07/2021", DataVenc: "12/07/2023"}
