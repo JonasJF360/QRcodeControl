@@ -14,9 +14,5 @@ Acredito que essa seria uma boa pratica que as empresas que produzem medicamento
 
 Ele consiste em gerar um QRcode que contem um texto no formato JSON, onde um sistema automatizado pode interpreta-lo de maneira fácil de se manipular após ser lido por uma câmera ou um leitor profissional.
 
-![leitorQRcode](statics/leitorQRcode.png)
-
-```
-img[alt=leitorQRcode] { width: 200px; }
-```
+<img src="statics/leitorQRcode.png" alt="leitorQRcode" style="zoom:50%;" />
 
