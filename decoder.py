@@ -3,8 +3,8 @@
 # para a converção com JSON.
 import json
 
-# É claro que o conteúdo seria capturado por um leirtor de QRcode
-# e não importado de um JSON mas sua converção ajudaria muito.
+# É claro que o conteúdo seria capturado por um leirtor de QRcode ou uma
+# camera e não importado de um JSON mas sua converção ajudaria muito.
 arquivo = open('statics/dados_produto.json', 'r')
 conteudo = arquivo.read()
 arquivo.close()

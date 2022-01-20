@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
 """ 
@@ -10,10 +9,14 @@ Sugiro fortemente utilisar um ambiente virtual caso queira apenas testar.
 """
 import qrcode
 import json
+from datetime import datetime
+
+
+dataHora = datetime.now().strftime('%d_%m_%Y-%H_%M_%S')
 
 # Esse texto pode receber um set do sistema para gerar uma imágem nova
 codigo_produto = 'LAT335699'
-descricao = 'LACTOFUR 50ML'
+descricao = 'PRODUTO EXEMPLO 50ML'
 lote = '2021-AX325-07'
 data_fabricacao = '19/01/2022'
 data_vencimento = '15/08/2023'
@@ -26,18 +29,18 @@ conteudo = {
     'DataVenc': data_vencimento
 }
 
+# Criação de um arquivo json
 conteudo_convertido = json.dumps(conteudo)
-
 arquivo = open('statics/dados_produto.json', 'w')
 arquivo.write(conteudo_convertido)
 arquivo.close()
 
+# Criação do QRcode
 img = qrcode.make(conteudo_convertido)
 
 type(img)  # qrcode.image.pil.PilImage
-img.save("statics/some_file.png")
+img.save(f"statics/QRfile_{dataHora}.png")
 
-# A saida será uma imágem png cujo conteúdo será:
-# {Lote: "2021-AX325-07", DataFabr: "12/07/2021", DataVenc: "12/07/2023"}
-# Esse texto pode ser usado tranquinamente por um interpretador qualquer
-# para inplementação no sistema de ERP para fazer o controle do produto.
+arquivo = open('statics/UltimoQRfile.txt', 'w')
+arquivo.write(f"statics/QRfile_{dataHora}.png")
+arquivo.close()
